@@ -1,0 +1,62 @@
+/**
+ * Style Guide 
+ */
+
+/* Color */
+
+$blue: #2ec9d1;
+$grey: #151515;
+$lightgrey: transparentize($grey, 0.75);
+$whiteGrey: #e5e5e5;
+$lightwhiteGrey: #edebee;
+$white: #ffffff;
+
+// breaks points
+$mqBreakPoints: (
+  mobile: 992px,
+);
+
+@mixin mobile {
+  @media (max-width: map-get($mqBreakPoints, "mobile")) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: map-get($mqBreakPoints, "desktop")) {
+    @content;
+  }
+}
+
+@function fw($type) {
+  @if ($type == "bold") {
+    @return 700;
+  } @else {
+    @return "normal";
+  }
+}
+
+@mixin ff($name, $fw: "normal") {
+  @if ($name == "sans") {
+    font-family: "PT Sans", sans-serif;
+    font-weight: fw($fw);
+  } @else if ($name == "serif") {
+    font-family: "PT Serif", serif;
+    font-weight: fw($fw);
+  } @else if ($name == "rufina") {
+    font-family: "Rufina", serif;
+    font-weight: fw($fw);
+  }
+}
+
+.g-mobileOnly {
+  @include desktop() {
+    display: none;
+  }
+}
+
+.g-desktopOnly {
+  @include mobile() {
+    display: none;
+  }
+}

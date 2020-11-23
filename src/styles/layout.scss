@@ -1,0 +1,30 @@
+.l-wrapper {
+  background-color: $white;
+}
+.l-header {
+  background: $blue;
+  color: $white;
+  padding: 38px 0;
+  .l-header_logo {
+    margin: 0 auto;
+    max-width: 485px;
+
+    @include mobile {
+      max-width: 200px;
+    }
+  }
+} // end of l-header
+
+.l-hero {
+  background: $white url("../images/header_bg.png");
+  background-size: cover;
+  padding: 30px 0;
+} // end of l-hero
+
+.l-footer {
+  background: $blue;
+  color: $white;
+  text-align: center;
+  padding: 20px 0;
+  font-size: 1.5em;
+} // end of l-footer

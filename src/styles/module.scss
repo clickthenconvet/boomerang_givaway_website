@@ -1,0 +1,48 @@
+.m-social-nav {
+  .l-header & li {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .l-footer_socialnav & li {
+    display: inline-block;
+    padding: 0px 11px;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+  img {
+    height: 17px;
+  }
+}
+
+.m-signupFeature {
+  display: flex;
+  .m-signupFeature_img {
+    width: 80px;
+  }
+}
+
+.m-productFeature {
+  display: flex;
+
+  .m-productFeature_bullet {
+    font-size: 5em;
+  }
+}
+
+.m-pollutionStats {
+  display: -webkit-inline-flex;
+  .m-pollutionStat {
+    text-align: center;
+  }
+}
+
+.m-benfits {
+  .m-benfit {
+    display: flex;
+  }
+}

@@ -1,0 +1,84 @@
+cta:
+  title: Get Your Free 4 Pack Now
+  subtitle: No credit card information is required.
+
+hero_section:
+  title: Quench your thirst. Boost your immunity. Be a planet saver.
+  subtitle: Claim your Free 4 pack of Ultra-Pure water delivered right to your doorstep.
+  alert: Hurry, our 2,000 Bottle Giveaway Ends Soon
+  bg_text:
+    - healthier
+    - cleaner
+    - delivered
+
+second_section:
+  title: it couldn't be easier
+  features:
+    - img: icon_bottle_pack.png
+      title: sign up now to get your free gift
+      desc: Join our fight against plastic with no obligation. No credit card required to sign up! Reduce your footprint on the environment with 4 awesome eco-friendly bottles delivered straight to your door.
+    - img: icon_bottles.png
+      title: it’s super easy and hassle free
+      desc: Get your 4 pack of Ultra-Purified water delivered directly to your door. Simply tell us where and when you want it delivered.
+    - img: icon_bottle.png
+      title: but hurry
+      desc: Get your hands on your own 4 pack before we run out! We’ve only got 2,000 bottles of Ultra-Pure water to give away. Get’em while they’re still available.
+
+third_section:
+  title: Get a healthy boost while saving the planet!
+  vertical_title: signing up
+  bottom_subtitle: Sign up now to get your hands on a free case before they're all gone!
+  features:
+    - title: Boost Your Immunity
+      desc: Ultra-Pure water is a powerful natural immunity booster that powers up your body, removes toxins, aids with digestion, and even improves the performance of your circulatory system.
+    - title: Be a planet saver
+      desc: When you drink Boomerang Water, you're doing your part to help minimize plastic waste, clean up our oceans, and drastically reduce your carbon footprint. Boomerang Water goes above and beyond just recycling, recirculating glass bottles to prevent waste, reduce energy, and create a true circular ecosystem.
+    - title: Drink and Enjoy
+      desc: It’s easy. Just fill out the form and we’ll deliver straight to your doorstep! Find out for yourself what Ultra-Pure water tastes like.
+
+fourth_section:
+  title: boomerang is cleaner.
+  desc: When you drink boomerang water, you are doing your part to help minimize plastic waste, clean up our oceans, and drastically reduce your carbon footprint. <br> Boomerang Water goes above and beyond just recycling. Our process re-circulates glass bottles. It’s simple, clean and makes a huge impact…truly a circular ecosystem.
+  bg_text:
+    - cleaner
+    - eco-friendly
+
+fifth_section:
+  title: Plastic Bottles are contaminating our oceans
+  title_left: Be a planet saver
+  subtitle: Every year, Americans consume nearly 50 Billion single-serve plastic bottles.
+  bullet_points:
+    - sine: ">"
+      value: 15
+      title: Are Recycled
+    - sine:
+      value: 20
+      title: End up in the Ocean
+    - sine: "<"
+      value: 60
+      title: End up in Landfills
+
+sixth_section:
+  title: Boomerang is healthier
+  desc: <span>Water is the most important resource on Earth</span> and the most important thing you put into your body every day!<br>With Boomerang, you can stop worrying about what’s in your water. Our advanced ultra-filtration and bottling system ensures a cleaner, fresher, healthier drinking water that strips all pathogens and chemicals while still supplying the minerals your body needs.
+  bullet_points:
+    - Our ultra-pure water is cleaner and healthier than other bottled water.
+    - Our bottles don't leach chemicals into the water like other bottles.
+    - It’s Free! Take advantage of our giveaway and get your Free 4 pack today.
+
+exit_popup:
+  title: Are you sure you don't want your free 4 pack?
+  desc: It only takes one minute to be a planet saver! Get delicious ultra-pure water delivered straight to your door.
+
+thankyou_page:
+  title: Congratulations
+  subtitle: You’re all set
+  desc: We’ll be in touch shortly to set-up your delivery details!<br>Start being a planet saver today. Share your free 4 pack with your friends and family… Or better yet, show them how to get their own Free 4 pack!
+
+alt_thankyou_page:
+  title: Thank you
+  subtitle: Oops… You’re too far away!
+  desc: We appreciate your interest in being a planet saver! Unfortunately, we aren’t able to deliver in your area right now. But don’t worry. Our delivery areas are growing fast! Stay informed about when we’ll get to your neighborhood.
+
+form:
+  title: You're just 1 step away from getting your free 4 Pack of Boomerang Water!
