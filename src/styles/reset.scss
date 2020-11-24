@@ -1,8 +1,10 @@
+html {
+  scroll-behavior: smooth;
+}
 body {
   background: $whiteGrey;
-  color: $lightgrey;
-  font-family: GilroyLight;
-  font-size: 20px;
+  color: $grey;
+  @include ff("primary");
   @include mobile {
     font-size: 14px;
   }
@@ -14,6 +16,9 @@ ul {
 
 a {
   text-decoration: none;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
 /* Bootstrap Reset */

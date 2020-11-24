@@ -38,7 +38,7 @@ third_section:
 
 fourth_section:
   title: boomerang is cleaner.
-  desc: When you drink boomerang water, you are doing your part to help minimize plastic waste, clean up our oceans, and drastically reduce your carbon footprint. <br> Boomerang Water goes above and beyond just recycling. Our process re-circulates glass bottles. It’s simple, clean and makes a huge impact…truly a circular ecosystem.
+  desc: When you drink boomerang water, you are doing your part to help minimize plastic waste, clean up our oceans, and drastically reduce your carbon footprint. <br><br>Boomerang Water goes above and beyond just recycling. Our process re-circulates glass bottles. It’s simple, clean and makes a huge impact…truly a circular ecosystem.
   bg_text:
     - cleaner
     - eco-friendly
@@ -60,7 +60,7 @@ fifth_section:
 
 sixth_section:
   title: Boomerang is healthier
-  desc: <span>Water is the most important resource on Earth</span> and the most important thing you put into your body every day!<br>With Boomerang, you can stop worrying about what’s in your water. Our advanced ultra-filtration and bottling system ensures a cleaner, fresher, healthier drinking water that strips all pathogens and chemicals while still supplying the minerals your body needs.
+  desc: <span>Water is the most important resource on Earth</span> and the most important thing you put into your body every day!<br><br>With Boomerang, you can stop worrying about what’s in your water. Our advanced ultra-filtration and bottling system ensures a cleaner, fresher, healthier drinking water that strips all pathogens and chemicals while still supplying the minerals your body needs.
   bullet_points:
     - Our ultra-pure water is cleaner and healthier than other bottled water.
     - Our bottles don't leach chemicals into the water like other bottles.

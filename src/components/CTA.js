@@ -4,7 +4,7 @@ export default ({title,subtitle}) => {
     return (
         <>
             <div className="m-cta">
-                <input type="button" value={title} className="m-cta_btn"/>
+                <a href="" className="g-btn">{title}</a>
                 {subtitle && <div className="m-cta_subtitle">{subtitle}</div>}
             </div>
 

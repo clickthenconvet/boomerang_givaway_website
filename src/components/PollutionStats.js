@@ -6,12 +6,8 @@ export default ({stats}) => {
             {
                 stats.map(list=>
                     <div className="m-pollutionStat">
-                        <div>
-                            <span className="m-pollutionStat_sine">{list.sine}</span>
-                            <span className="m-pollutionStat_value">{list.value}</span>
-                        </div>
-                        <span className="m-pollutionStat_title">{list.title}</span>
-
+                        <div className="m-pollutionStat_value">{list.sine}{list.value}%</div>
+                        <div className="m-pollutionStat_title">{list.title}</div>
                     </div>
                 )
             }
