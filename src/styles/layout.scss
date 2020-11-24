@@ -300,6 +300,12 @@
   .l-sixth_cta {
     margin-bottom: 30px;
   }
+  .l-sixth_desc {
+    span {
+      color: $blue;
+      @include ff("primary", "bold");
+    }
+  }
 } //end of l-sixth
 
 .l-footer {

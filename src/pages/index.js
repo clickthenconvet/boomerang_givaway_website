@@ -245,7 +245,7 @@ export default () => {
             </div>
             <div className="col-lg-6 l-sixth_right">
                <div 
-                className="l-fift_desc" 
+                className="l-sixth_desc" 
                 dangerouslySetInnerHTML={{__html:data.pageContent.sixth_section.desc}}>
               </div>
 
