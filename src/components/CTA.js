@@ -1,13 +1,11 @@
 import React from 'react';
+import Button from '../components/Button';
 
 export default ({title,subtitle}) => {
     return (
-        <>
-            <div className="m-cta">
-                <a href="" className="g-btn">{title}</a>
-                {subtitle && <div className="m-cta_subtitle">{subtitle}</div>}
-            </div>
-
-        </>
+        <div className="m-cta">
+            <Button title={title}/>
+            {subtitle && <div className="m-cta_subtitle">{subtitle}</div>}
+        </div>
     );
 }

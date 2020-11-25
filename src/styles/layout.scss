@@ -18,7 +18,7 @@
 } // end of l-header
 
 .l-hero {
-  background: $white url("../images/header_bg.png") no-repeat;
+  background: $white url("../images/header_bg.jpg") no-repeat;
   background-size: cover;
 
   @include mobile {
@@ -170,12 +170,11 @@
 } //end of l-third
 
 .l-fourth {
-  background: url("../images/fourth_section_bg_text_1.svg") no-repeat center top,
-    url("../images/fourth_section_bg_text_2.svg") no-repeat 60% bottom;
-  background-size: 35%, 40%;
+  background: url("../images/fourth_section_bg_text_2.svg") no-repeat 60% bottom;
+  background-size: 40%;
   @include mobile {
-    background-size: 80%, 90%;
-    background-position: 20px 52%, center 97%;
+    background-size: 90%;
+    background-position: center 97%;
   }
 
   .l-fourth_left {
@@ -196,10 +195,24 @@
   }
 
   .l-fourth_right {
+    position: relative;
     @include mobile {
       border-left: 10px solid transparentize($blue, 0.6);
       border-bottom: 15px solid transparentize($blue, 0.6);
       padding-bottom: 70px;
+    }
+
+    .l-fourth_bg_1 {
+      position: absolute;
+      z-index: 1;
+      max-width: 600px;
+      width: 100%;
+      @include desktop {
+        left: -300px;
+      }
+      img {
+        width: 100%;
+      }
     }
   }
 

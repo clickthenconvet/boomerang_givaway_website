@@ -1,5 +1,4 @@
 module.exports = {
-  pathPrefix: `/free-4-pack`,
   siteMetadata: {
     title: `Get Boomerang water free 4 pack`,
     description: `Claim your Free 4 pack of Ultra-Pure water delivered right to your doorstep.`,
