@@ -138,7 +138,7 @@ export default ({content,images}) => {
                 <div className="l-fourth_bg_1"><img src={fourthSectionBg} alt={content.fourth_section.title}/></div>
                 <Image
                   src={images.fourth_section_feature} 
-                  className=""
+                  className="l-fourth_section_feature"
                   alt=""
                 />
             </div>

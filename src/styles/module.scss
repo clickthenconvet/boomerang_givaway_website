@@ -7,27 +7,6 @@
   }
 }
 
-.m-social-nav {
-  .l-header & li {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .l-footer_socialnav & li {
-    display: inline-block;
-    padding: 0px 11px;
-    &:first-child {
-      padding-left: 0;
-    }
-    &:last-child {
-      padding-right: 0;
-    }
-  }
-  img {
-    height: 17px;
-  }
-}
-
 .m-signupFeature {
   display: flex;
 
@@ -100,6 +79,7 @@
     .m-pollutionStat_value {
       color: transparentize($grey, 0.22);
       @include ff("primary", bold);
+      font-size: 2.5em;
       @include mobile {
         font-size: 2em;
       }
@@ -130,5 +110,26 @@
   .m-benfit_right {
     max-width: 500px;
     color: $lightgrey;
+  }
+}
+
+.m-social-nav {
+  .l-header & li {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  .l-footer_socialnav & li {
+    display: inline-block;
+    padding: 0px 11px;
+    &:first-child {
+      padding-left: 0;
+    }
+    &:last-child {
+      padding-right: 0;
+    }
+  }
+  img {
+    height: 17px;
   }
 }
