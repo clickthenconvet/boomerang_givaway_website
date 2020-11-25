@@ -335,8 +335,8 @@
   }
 
   .l-singup_right {
-    background: #92e7ec url("../images/dilvery_box.jpg") no-repeat left bottom;
-    background-size: contain;
+    background: #92e7ec url("../images/dilvery_box.jpg") no-repeat center;
+    background-size: cover;
   }
 
   .l-singupForm_Title {
@@ -344,6 +344,12 @@
     text-align: center;
     font-size: 1.7em;
     margin-bottom: 40px;
+  }
+
+  .l-singupForm_steps {
+    @include desktop {
+      margin-bottom: 30px;
+    }
   }
 
   .l-singupForm_form {

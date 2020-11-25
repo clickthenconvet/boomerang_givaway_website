@@ -113,6 +113,50 @@
   }
 }
 
+.m-stepNavigation {
+  padding: 0;
+  margin: 0;
+
+  @include desktop {
+    display: flex;
+  }
+
+  li {
+    opacity: 0.5;
+    &.active {
+      opacity: 1;
+    }
+
+    @include desktop {
+      margin-right: 30px;
+    }
+    @include mobile {
+      margin-bottom: 26px;
+    }
+  }
+
+  .m-stepNavigation_label {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: transparentize($grey, 0.25);
+  }
+
+  .m-stepNavigation_bullet {
+    display: inline-block;
+    width: 46px;
+
+    background: $blue;
+    box-shadow: 0px 4px 4px rgba(147, 153, 153, 0.19);
+    border-radius: 4px;
+
+    color: $white;
+    @include ff("primary", "bold");
+    text-align: center;
+    line-height: 46px;
+    margin-right: 10px;
+  }
+}
+
 .m-social-nav {
   .l-header & li {
     margin-bottom: 20px;

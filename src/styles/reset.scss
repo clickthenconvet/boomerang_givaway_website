@@ -31,7 +31,8 @@ label {
 
 input[type="text"],
 input[type="email"],
-input[type="phone"] {
+input[type="phone"],
+select {
   display: block;
   background: $white;
   width: 100%;
