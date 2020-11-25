@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 
 import Image from "../components/Image";
 import SignupFeature from "../components/SignupFeature";
@@ -6,8 +6,9 @@ import ProductFeature from "../components/ProductFeature";
 import PollutionStats from "../components/PollutionStats";
 import Benefits from "../components/Benefits";
 
-import Layout from "../components/Layout";
+
 import SEO from "../components/Seo";
+import Layout from "../components/Layout";
 import CTA from "../components/CTA";
 
 import fourthSectionBg from "../images/fourth_section_bg_text_1.svg";
@@ -15,9 +16,26 @@ import fourthSectionBg from "../images/fourth_section_bg_text_1.svg";
 
 export default ({content,images}) => {
 
+  useEffect(()=>{
+     var eventTrigerd = false;
+     document.addEventListener("mouseout", (event) => {
+      if (!event.toElement && !event.relatedTarget) {
+        setTimeout(() => {
+         
+          if(!eventTrigerd){
+            eventTrigerd = true;
+
+             // open exit popup 
+          }
+        }, 1000)
+      }
+    });
+
+  },[]);
+
   return(
     <Layout>
-      <SEO title="Free 4 Pack" />
+      <SEO title={content.cta.title} />
       <div className="l-hero">
         <div className="container-fluid">
           <div className="row">

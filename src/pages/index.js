@@ -11,62 +11,67 @@ export default () => {
         fifth_section_feature:"planet_saver.jpg",
         six_section_feature:"sixth_feature.jpg",
     }
-    const data = useStaticQuery(graphql`{
-        pageContent:contentYaml {
 
-            cta{
-                title,
-                subtitle
-            }
-
-            hero_section {
-                title
-                subtitle
-                alert
-            }
-
-            second_section{
-                title,
-                features{
-                    img,
-                    title,
-                    desc
-                } 
-            }
-
-            third_section{
-                title,
-                bottom_subtitle,
-                features{
-                    title,
-                    desc
-                } 
-            }
-
-            fourth_section{
-                title,
-                desc
-            }
-
-            fifth_section{
-                title,
-                title_left,
-                subtitle,
-                bullet_points{
-                        sine,
-                        value,
+    const query = useStaticQuery(graphql`{
+        content:allFile(filter: {relativePath: {eq: "free_4_pack.yaml"}}) {
+            nodes {
+                childContentYaml {
+                    cta{
                         title,
+                        subtitle
                     }
-            }
+                    hero_section {
+                        title
+                        subtitle
+                        alert
+                    }
 
-            sixth_section{
-                title,
-                desc,
-                bullet_points
+                    second_section{
+                        title,
+                        features{
+                            img,
+                            title,
+                            desc
+                        } 
+                    }
+
+                    third_section{
+                        title,
+                        bottom_subtitle,
+                        features{
+                            title,
+                            desc
+                        } 
+                    }
+
+                    fourth_section{
+                        title,
+                        desc
+                    }
+
+                    fifth_section{
+                        title,
+                        title_left,
+                        subtitle,
+                        bullet_points{
+                            sine,
+                            value,
+                            title,
+                        }
+                    }
+                    sixth_section{
+                        title,
+                        desc,
+                        bullet_points
+                    }
+                }
             }
         }
     }`);
-
-
-    return <Frontpage content={data.pageContent} images={images}/>;
+    return(
+        <Frontpage 
+            content={query.content.nodes[0].childContentYaml} 
+            images={images}
+        />
+    );
 }

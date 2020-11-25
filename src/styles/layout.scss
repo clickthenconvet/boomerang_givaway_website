@@ -328,3 +328,38 @@
   padding: 20px 0;
   font-size: 0.8em;
 } // end of l-footer
+
+.l-singup {
+  .l-singup_left {
+    padding: 40px;
+  }
+
+  .l-singup_right {
+    background: #92e7ec url("../images/dilvery_box.jpg") no-repeat left bottom;
+    background-size: contain;
+  }
+
+  .l-singupForm_Title {
+    color: $lightgrey;
+    text-align: center;
+    font-size: 1.7em;
+    margin-bottom: 40px;
+  }
+
+  .l-singupForm_form {
+    .row {
+      margin-bottom: 22px;
+    }
+
+    .l-singupForm_form_bottom {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .l-singupForm_bottomNoCrd {
+      font-size: 0.9em;
+      padding-top: 20px;
+      color: $lightgrey;
+    }
+  }
+}

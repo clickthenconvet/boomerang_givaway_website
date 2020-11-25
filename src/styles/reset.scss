@@ -21,4 +21,30 @@ a {
   }
 }
 
+label {
+  display: block;
+  font-size: 0.7em;
+  margin-bottom: 5px;
+  @include ff("secondary");
+  color: #767676;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="phone"] {
+  display: block;
+  background: $white;
+  width: 100%;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid transparentize(#949494, 0.4);
+  outline: none;
+  box-shadow: inset 0px 0px 10px transparentize(#949494, 0.9);
+
+  &:focus {
+    border: 1px solid $blue;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
+  }
+}
+
 /* Bootstrap Reset */

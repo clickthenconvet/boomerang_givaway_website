@@ -66,13 +66,14 @@ $mqBreakPoints: (
   border: 3px solid $blue;
   @include ff("secondary", "bold");
   background-color: $white;
+  color: $blue;
 
   text-align: center;
   padding: 10px 25px;
   border-radius: 50px;
   transition: background-color 0.2s;
   @include desktop() {
-    font-size: 1.25em;
+    font-size: 1em;
   }
   &:hover {
     background-color: $blue;
