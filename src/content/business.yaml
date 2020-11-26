@@ -16,13 +16,13 @@ second_section:
   features:
     - img: icon_bottle_pack.png
       title: sign up now to get your free gift
-      desc: Join our fight against plastic with no obligation. No credit card required to sign up! Reduce your footprint on the environment with 4 awesome eco-friendly bottles delivered straight to your door.
+      desc: Join our fight against plastic with no obligation. No credit card required to sign up! Reduce your footprint on the environment with 16 awesome eco-friendly bottles delivered straight to your door.
     - img: icon_bottles.png
       title: it’s super easy and hassle free
-      desc: Get your 4 pack of Ultra-Purified water delivered directly to your door. Simply tell us where and when you want it delivered.
+      desc: Get your 16 pack of Ultra-Purified water delivered directly to your door. Simply tell us where and when you want it delivered.
     - img: icon_bottle.png
       title: but hurry
-      desc: Get your hands on your own 4 pack before we run out! We’ve only got 2,000 bottles of Ultra-Pure water to give away. Get’em while they’re still available.
+      desc: Get your hands on your own 16 pack before we run out! We’ve only got 100 cases of Ultra-Pure water to give away. Get’em while they’re still available.
 
 third_section:
   title: Get a healthy boost while saving the planet!
@@ -64,7 +64,7 @@ sixth_section:
   bullet_points:
     - Our ultra-pure water is cleaner and healthier than other bottled water.
     - Our bottles don't leach chemicals into the water like other bottles.
-    - It’s Free! Take advantage of our giveaway and get your Free 4 pack today.
+    - It’s Free! Take advantage of our giveaway and get your Free 16 pack today.
 
 exit_popup:
   title: Are you sure you don't want your free 16-bottle case?
