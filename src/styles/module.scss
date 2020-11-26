@@ -157,23 +157,22 @@
   }
 }
 
-.m-social-nav {
-  .l-header & li {
-    margin-bottom: 20px;
-    text-align: center;
-  }
+.m-socialNav {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 
-  .l-footer_socialnav & li {
-    display: inline-block;
-    padding: 0px 11px;
-    &:first-child {
-      padding-left: 0;
+  li {
+    margin: 0 15px;
+    @include mobile {
+      margin: 0 10px;
     }
-    &:last-child {
-      padding-right: 0;
+    img {
+      width: 50px;
+      @include mobile {
+        width: 40px;
+      }
     }
-  }
-  img {
-    height: 17px;
   }
 }

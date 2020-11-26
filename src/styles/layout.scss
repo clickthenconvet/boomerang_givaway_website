@@ -331,7 +331,10 @@
 
 .l-singup {
   .l-singup_left {
-    padding: 40px;
+    padding: 20px;
+    @include desktop {
+      padding: 40px;
+    }
   }
 
   .l-singup_right {
@@ -342,8 +345,14 @@
   .l-singupForm_Title {
     color: $lightgrey;
     text-align: center;
-    font-size: 1.7em;
-    margin-bottom: 40px;
+    font-size: 1.2em;
+    @include desktop {
+      font-size: 1.7em;
+    }
+    margin-bottom: 20px;
+    @include desktop {
+      margin-bottom: 40px;
+    }
   }
 
   .l-singupForm_steps {
@@ -366,6 +375,93 @@
       font-size: 0.9em;
       padding-top: 20px;
       color: $lightgrey;
+    }
+
+    @include mobile {
+      &.l-singupForm_setp1 {
+        label {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.l-thankyou {
+  background: $lightwhiteGrey;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  @include desktop {
+    padding: 50px;
+  }
+
+  .l-thankyou_bg1 {
+    position: absolute;
+    width: 500px;
+    top: -250px;
+    left: -250px;
+  }
+
+  .l-thankyou_bg2 {
+    position: absolute;
+    z-index: 1;
+    height: 80%;
+    @include mobile {
+      height: 60%;
+    }
+    top: 0px;
+    left: 0px;
+  }
+  .l-thankyou_left {
+    background: transparentize($blue, 0.65) url("../images/thankyou_bg.svg")
+      no-repeat -60% 0px;
+    background-size: cover;
+    text-align: center;
+    padding: 20px;
+    padding-top: 50px;
+    @include desktop {
+      padding-top: 100px;
+    }
+  }
+
+  .l-thankyou_title {
+    font-size: 2em;
+    @include desktop {
+      font-size: 3em;
+    }
+    @include ff("primary", "bold");
+    color: $white;
+    line-height: 1.5em;
+  }
+  .l-thankyou_subtitle {
+    font-size: 1.5em;
+    @include desktop {
+      font-size: 2.5em;
+    }
+    @include ff("primary", "bold");
+    color: transparentize($grey, 0.25);
+    margin-bottom: 30px;
+  }
+  .l-thankyou_desc {
+    color: transparentize($grey, 0.25);
+    max-width: 510px;
+    display: inline-block;
+    line-height: 1.2em;
+  }
+
+  .l-thanyou_share {
+    margin-top: 20px;
+    @include mobile {
+      margin-bottom: 20px;
+    }
+
+    .l-thankyou_share_title {
+      @extend .l-thankyou_subtitle;
+      font-size: 1.5em;
+      @include mobile {
+        margin-bottom: 10px;
+      }
     }
   }
 }

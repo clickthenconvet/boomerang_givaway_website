@@ -1,5 +1,6 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
+import SEO from "../components/Seo";
 import Frontpage from '../template/Frontpage';
 
 export default () => {
@@ -69,9 +70,13 @@ export default () => {
         }
     }`);
     return(
-        <Frontpage 
-            content={query.content.nodes[0].childContentYaml} 
-            images={images}
-        />
+
+        <>
+            <SEO title={query.content.nodes[0].childContentYaml.cta.title} />
+            <Frontpage 
+                content={query.content.nodes[0].childContentYaml} 
+                images={images}
+            />
+        </>
     );
 }

@@ -80,3 +80,10 @@ $mqBreakPoints: (
     color: $white;
   }
 }
+
+.g-input_error {
+  font-size: 0.6em;
+  color: $danger;
+
+  text-transform: uppercase;
+}

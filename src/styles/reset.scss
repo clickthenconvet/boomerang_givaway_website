@@ -1,3 +1,7 @@
+* {
+  outline: none;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -31,7 +35,8 @@ label {
 
 input[type="text"],
 input[type="email"],
-input[type="phone"],
+input[type="tel"],
+input[type="number"],
 select {
   display: block;
   background: $white;

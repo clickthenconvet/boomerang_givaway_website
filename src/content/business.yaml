@@ -67,18 +67,10 @@ sixth_section:
     - It’s Free! Take advantage of our giveaway and get your Free 4 pack today.
 
 exit_popup:
-  title: Are you sure you don't want your free 4 pack?
+  title: Are you sure you don't want your free 16-bottle case?
   desc: It only takes one minute to be a planet saver! Get delicious ultra-pure water delivered straight to your door.
 
 thankyou_page:
   title: Congratulations
   subtitle: You’re all set
   desc: We’ll be in touch shortly to set-up your delivery details!<br>Start being a planet saver today. Share your free 4 pack with your friends and family… Or better yet, show them how to get their own Free 4 pack!
-
-alt_thankyou_page:
-  title: Thank you
-  subtitle: Oops… You’re too far away!
-  desc: We appreciate your interest in being a planet saver! Unfortunately, we aren’t able to deliver in your area right now. But don’t worry. Our delivery areas are growing fast! Stay informed about when we’ll get to your neighborhood.
-
-form:
-  title: You're just 1 step away from getting your free 4 Pack of Boomerang Water!

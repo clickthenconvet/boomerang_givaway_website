@@ -5,9 +5,6 @@ import SignupFeature from "../components/SignupFeature";
 import ProductFeature from "../components/ProductFeature";
 import PollutionStats from "../components/PollutionStats";
 import Benefits from "../components/Benefits";
-
-
-import SEO from "../components/Seo";
 import Layout from "../components/Layout";
 import CTA from "../components/CTA";
 
@@ -24,8 +21,9 @@ export default ({content,images}) => {
          
           if(!eventTrigerd){
             eventTrigerd = true;
-
              // open exit popup 
+            
+
           }
         }, 1000)
       }
@@ -35,7 +33,7 @@ export default ({content,images}) => {
 
   return(
     <Layout>
-      <SEO title={content.cta.title} />
+
       <div className="l-hero">
         <div className="container-fluid">
           <div className="row">
