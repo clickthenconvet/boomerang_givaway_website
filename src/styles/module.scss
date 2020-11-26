@@ -1,48 +1,178 @@
-.m-social-nav {
-  .l-header & li {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-
-  .l-footer_socialnav & li {
-    display: inline-block;
-    padding: 0px 11px;
-    &:first-child {
-      padding-left: 0;
-    }
-    &:last-child {
-      padding-right: 0;
-    }
-  }
-  img {
-    height: 17px;
+.m-cta {
+  text-align: center;
+  .m-cta_subtitle {
+    margin-top: 12px;
+    font-size: 0.9em;
+    color: transparentize($lightgrey, 0.2);
   }
 }
 
 .m-signupFeature {
   display: flex;
+
+  margin-bottom: 38px;
   .m-signupFeature_img {
-    width: 80px;
+    width: 60px;
+    @include mobile {
+      margin: 0 auto;
+    }
+  }
+
+  .m-signupFeature_title {
+    @include ff("primary", "bold");
+    color: $lightgrey;
+    font-size: 1.125em;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+  }
+  .m-signupFeature_desc {
+    color: $black;
+    max-width: 550px;
+    margin: 0 auto;
+  }
+
+  .m-signupFeature_left {
+    margin-top: 20px;
+    margin-right: 15px;
+    @include mobile {
+      margin-right: 5px;
+    }
   }
 }
 
 .m-productFeature {
   display: flex;
+  margin-bottom: 40px;
 
   .m-productFeature_bullet {
-    font-size: 5em;
+    font-size: 6em;
+    @include mobile {
+      font-size: 5em;
+    }
+    @include ff("secondary", bold);
+    color: transparentize($blue, 0.5);
+    line-height: 80%;
+    padding-right: 25px;
+  }
+
+  .m-productFeature_title {
+    color: $lightgrey;
+    @include ff("primary", "bold");
+    font-size: 2em;
+    margin-bottom: 10px;
+    line-height: 1em;
+  }
+  .m-productFeature_desc {
+    color: $black;
+    font-size: 0.9em;
   }
 }
 
 .m-pollutionStats {
-  display: -webkit-inline-flex;
+  display: flex;
+  justify-content: space-around;
   .m-pollutionStat {
     text-align: center;
+  }
+
+  .m-pollutionStat {
+    .m-pollutionStat_value {
+      color: transparentize($grey, 0.22);
+      @include ff("primary", bold);
+      font-size: 2.5em;
+      @include mobile {
+        font-size: 2em;
+      }
+    }
+    .m-pollutionStat_title {
+      text-transform: capitalize;
+      line-height: 1em;
+    }
   }
 }
 
 .m-benfits {
+  padding-left: 0;
+  @include desktop {
+    padding-left: 20px;
+  }
   .m-benfit {
     display: flex;
+    margin-bottom: 20px;
+  }
+
+  .m-benfit_left img {
+    width: 50px;
+    margin-top: 5px;
+    margin-right: 10px;
+  }
+
+  .m-benfit_right {
+    max-width: 500px;
+    color: $lightgrey;
+  }
+}
+
+.m-stepNavigation {
+  padding: 0;
+  margin: 0;
+
+  @include desktop {
+    display: flex;
+  }
+
+  li {
+    opacity: 0.5;
+    &.active {
+      opacity: 1;
+    }
+
+    @include desktop {
+      margin-right: 30px;
+    }
+    @include mobile {
+      margin-bottom: 26px;
+    }
+  }
+
+  .m-stepNavigation_label {
+    font-size: 0.8em;
+    text-transform: uppercase;
+    color: transparentize($grey, 0.25);
+  }
+
+  .m-stepNavigation_bullet {
+    display: inline-block;
+    width: 46px;
+
+    background: $blue;
+    box-shadow: 0px 4px 4px rgba(147, 153, 153, 0.19);
+    border-radius: 4px;
+
+    color: $white;
+    @include ff("primary", "bold");
+    text-align: center;
+    line-height: 46px;
+    margin-right: 10px;
+  }
+}
+
+.m-socialNav {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+
+  li {
+    margin: 0 15px;
+    @include mobile {
+      margin: 0 10px;
+    }
+    img {
+      width: 50px;
+      @include mobile {
+        width: 40px;
+      }
+    }
   }
 }

@@ -1,5 +1,18 @@
-@import "../fonts/fonts.css";
+/**
+ * Style Guide 
+ */
 
+/* Color */
+
+$blue: #2ec9d1;
+$primary: $blue;
+$grey: #151515;
+$lightgrey: transparentize($grey, 0.25);
+$whiteGrey: #d3d3d35b;
+$lightwhiteGrey: #edebee;
+$white: #ffffff;
+
+@import "../fonts/fonts.css";
 @import "node_modules/bootstrap/scss/bootstrap-reboot.scss";
 @import "node_modules/bootstrap/scss/bootstrap-grid.scss";
 

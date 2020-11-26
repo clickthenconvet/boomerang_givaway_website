@@ -1,10 +1,10 @@
 cta:
-  title: Get Your Free 4 Pack Now
+  title: Get Your Free 16-Bottle Case Now
   subtitle: No credit card information is required.
 
 hero_section:
-  title: Quench your thirst. Boost your immunity. Be a planet saver.
-  subtitle: Claim your Free 4 pack of Ultra-Pure water delivered right to your doorstep.
+  title: Move your local business towards more sustainable initiatives.
+  subtitle: Claim your free case of 16 Ultra-Pure water bottles delivered right to your office.
   alert: Hurry, our 2,000 Bottle Giveaway Ends Soon
   bg_text:
     - healthier
@@ -16,13 +16,13 @@ second_section:
   features:
     - img: icon_bottle_pack.png
       title: sign up now to get your free gift
-      desc: Join our fight against plastic with no obligation. No credit card required to sign up! Reduce your footprint on the environment with 4 awesome eco-friendly bottles delivered straight to your door.
+      desc: Join our fight against plastic with no obligation. No credit card required to sign up! Reduce your footprint on the environment with 16 awesome eco-friendly bottles delivered straight to your door.
     - img: icon_bottles.png
       title: it’s super easy and hassle free
-      desc: Get your 4 pack of Ultra-Purified water delivered directly to your door. Simply tell us where and when you want it delivered.
+      desc: Get your 16 pack of Ultra-Purified water delivered directly to your door. Simply tell us where and when you want it delivered.
     - img: icon_bottle.png
       title: but hurry
-      desc: Get your hands on your own 4 pack before we run out! We’ve only got 2,000 bottles of Ultra-Pure water to give away. Get’em while they’re still available.
+      desc: Get your hands on your own 16 pack before we run out! We’ve only got 100 cases of Ultra-Pure water to give away. Get’em while they’re still available.
 
 third_section:
   title: Get a healthy boost while saving the planet!
@@ -64,8 +64,13 @@ sixth_section:
   bullet_points:
     - Our ultra-pure water is cleaner and healthier than other bottled water.
     - Our bottles don't leach chemicals into the water like other bottles.
-    - It’s Free! Take advantage of our giveaway and get your Free 4 pack today.
+    - It’s Free! Take advantage of our giveaway and get your Free 16 pack today.
 
 exit_popup:
-  title: Are you sure you don't want your free 4 pack?
+  title: Are you sure you don't want your free 16-bottle case?
   desc: It only takes one minute to be a planet saver! Get delicious ultra-pure water delivered straight to your door.
+
+thankyou_page:
+  title: Congratulations
+  subtitle: You’re all set
+  desc: We’ll be in touch shortly to set-up your delivery details!<br>Start being a planet saver today. Share your free 4 pack with your friends and family… Or better yet, show them how to get their own Free 4 pack!

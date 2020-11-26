@@ -1,19 +1,7 @@
-/**
- * Style Guide 
- */
-
-/* Color */
-
-$blue: #2ec9d1;
-$grey: #151515;
-$lightgrey: transparentize($grey, 0.75);
-$whiteGrey: #e5e5e5;
-$lightwhiteGrey: #edebee;
-$white: #ffffff;
-
 // breaks points
 $mqBreakPoints: (
   mobile: 992px,
+  desktop: 993px,
 );
 
 @mixin mobile {
@@ -28,24 +16,17 @@ $mqBreakPoints: (
   }
 }
 
-@function fw($type) {
-  @if ($type == "bold") {
-    @return 700;
-  } @else {
-    @return "normal";
-  }
-}
-
 @mixin ff($name, $fw: "normal") {
-  @if ($name == "sans") {
-    font-family: "PT Sans", sans-serif;
-    font-weight: fw($fw);
-  } @else if ($name == "serif") {
-    font-family: "PT Serif", serif;
-    font-weight: fw($fw);
-  } @else if ($name == "rufina") {
-    font-family: "Rufina", serif;
-    font-weight: fw($fw);
+  @if ($name == "primary" and $fw == "normal") {
+    font-family: "GilroyLight", sans-serif;
+  } @else if ($name == "primary" and $fw == "bold") {
+    font-family: "GilroyExtraBold", sans-serif;
+    font-weight: 700;
+  } @else if ($name == "secondary" and $fw == "normal") {
+    font-family: "CenturyGothic", serif;
+  } @else if ($name == "secondary" and $fw == "bold") {
+    font-family: "CenturyGothicBold", serif;
+    font-weight: bold;
   }
 }
 
@@ -59,4 +40,50 @@ $mqBreakPoints: (
   @include mobile() {
     display: none;
   }
+}
+
+.g-flash-padding-left {
+  padding-left: 0;
+}
+.g-flash-padding-right {
+  padding-right: 0;
+}
+
+.g-flash-padding-both {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Button */
+
+.g-btn {
+  display: inline-block;
+  width: 100%;
+  max-width: 500px;
+  @include desktop {
+    max-width: 412px;
+  }
+  border: 3px solid $blue;
+  @include ff("secondary", "bold");
+  background-color: $white;
+  color: $blue;
+
+  text-align: center;
+  padding: 10px 25px;
+  border-radius: 50px;
+  transition: background-color 0.2s;
+  @include desktop() {
+    font-size: 1em;
+  }
+  &:hover {
+    background-color: $blue;
+    color: $white;
+  }
+}
+
+.g-input_error {
+  font-size: 0.6em;
+  color: $danger;
+
+  text-transform: uppercase;
 }

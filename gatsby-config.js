@@ -1,8 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Get Boomerang water free 4 pack`,
-    description: `Claim your Free 4 pack of Ultra-Pure water delivered right to your doorstep.`,
-    author:``,
+    title: `Ultra-Pure Water Giveaway! Get your Free 4-pack of eco-friendly water delivered straight to your door!`,
+    description: `Join our fight against plastic and get a healthy boost while saving the planet. Do your part to help minimize plastic waste, clean-up our oceans and reduce your carbon footprint. It’s easy and hassle free. Sign up now and get your Free 4-pack delivered right to your doorstep.`,
+    author:`@boomerangwater`,
+    url:'https://promo.getboomerangwater.com/',
+    site_name:'promo.getboomerangwater.com'
+
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

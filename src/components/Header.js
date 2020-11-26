@@ -1,5 +1,5 @@
 import React from "react";
-import { useStaticQuery, graphql } from 'gatsby';
+import { useStaticQuery,graphql,Link } from 'gatsby';
 import Image from "../components/Image";
 export default () => {
 
@@ -21,12 +21,15 @@ export default () => {
 
   return(
     <header className="l-header">
-      
+
+      <Link to="/">
         <Image 
           src="logo_white.png" 
           className="l-header_logo"
           alt={data.site.siteMetadata.title}
         />
+      </Link>
+        
     </header>
   );
   

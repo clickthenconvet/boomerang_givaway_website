@@ -1,13 +1,15 @@
 .l-wrapper {
+  max-width: 1400px;
+  margin: 0 auto;
   background-color: $white;
 }
 .l-header {
   background: $blue;
   color: $white;
-  padding: 38px 0;
+  padding: 25px 0;
   .l-header_logo {
     margin: 0 auto;
-    max-width: 485px;
+    max-width: 300px;
 
     @include mobile {
       max-width: 200px;
@@ -16,15 +18,450 @@
 } // end of l-header
 
 .l-hero {
-  background: $white url("../images/header_bg.png");
+  background: $white url("../images/header_bg.jpg") no-repeat;
   background-size: cover;
-  padding: 30px 0;
+
+  @include mobile {
+    background-position: bottom center;
+    background-size: contain;
+  }
+
+  .l-hero_left {
+    background: url("../images/hero_bg_text.svg") no-repeat;
+    background-size: contain;
+    @include mobile {
+      background-position: top center;
+    }
+    text-align: center;
+
+    .l-hero_left_inner {
+      @include desktop() {
+        padding-top: 150px;
+      }
+
+      @include mobile() {
+        padding-top: 50px;
+      }
+    }
+  }
+
+  .l-hero_right {
+    text-align: center;
+
+    .l-hero_img {
+      @include mobile {
+        width: 80%;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  .l-hero_title {
+    display: inline-block;
+    font-size: 2em;
+    line-height: 1em;
+    color: $lightgrey;
+    margin-bottom: 17px;
+    max-width: 560px;
+  }
+  .l-hero_subtitle {
+    font-size: 1.2em;
+    color: $blue;
+    @include ff("primary", "bold");
+    display: inline-block;
+    max-width: 500px;
+
+    @include desktop() {
+      margin-bottom: 30px;
+    }
+    @include mobile() {
+      max-width: 340px;
+      margin-bottom: 10px;
+    }
+  }
+  .l-hero_alert {
+    display: inline-block;
+    margin-bottom: 25px;
+    color: transparentize($lightgrey, $amount: 0.3);
+    @include mobile() {
+      max-width: 150px;
+    }
+  }
+
+  .l-hero_left_cta {
+    margin-bottom: 40px;
+  }
 } // end of l-hero
+
+.l-second {
+  @include desktop {
+    background: url("../images/circles.svg") no-repeat center -100%,
+      url("../images/circles.svg") no-repeat -80px 120%;
+    background-size: 500px, 300px;
+  }
+
+  .l-second_left {
+    margin-top: 30px;
+    @include desktop {
+      margin-top: 50px;
+    }
+  }
+
+  .l-second_right {
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .l-second_title {
+    color: $blue;
+    @include ff("primary", "bold");
+    text-transform: capitalize;
+    font-size: 2em;
+    margin-bottom: 40px;
+
+    @include mobile() {
+      text-align: center;
+    }
+
+    @include desktop() {
+      padding-left: 70px;
+    }
+  }
+
+  .l-second_cta {
+    @include desktop {
+      margin-top: 70px;
+    }
+    margin-bottom: 35px;
+  }
+} //end of l-second
+
+.l-third {
+  .l-third_right {
+    padding-top: 60px;
+    @include desktop {
+      background: url("../images/circles.svg") no-repeat;
+      background-position: 130% 130%;
+      background-size: 320px;
+    }
+  }
+
+  .l-third_bottomSubtitle {
+    margin: 50px auto;
+    margin-bottom: 30px;
+    font-size: 1.4em;
+    text-align: center;
+    @include ff("primary", bold);
+    color: $lightgrey;
+    max-width: 520px;
+
+    @include mobile {
+      margin: 15px auto;
+    }
+  }
+  .l-third_cta {
+    margin-bottom: 40px;
+    @include mobile {
+      margin-bottom: 30px;
+    }
+  }
+} //end of l-third
+
+.l-fourth {
+  background: url("../images/fourth_section_bg_text_2.svg") no-repeat 60% bottom;
+  background-size: 40%;
+  @include mobile {
+    background-size: 90%;
+    background-position: center 97%;
+  }
+
+  .l-fourth_left {
+    border-left: 10px solid transparentize($blue, 0.6);
+    @include desktop {
+      border-left: 50px solid transparentize($blue, 0.6);
+      border-bottom: 80px solid transparentize($blue, 0.6);
+      padding-top: 100px;
+      padding-bottom: 50px;
+    }
+  }
+
+  .l-fourth_left_inner {
+    padding: 20px;
+    @include desktop {
+      padding: 50px;
+    }
+  }
+
+  .l-fourth_right {
+    position: relative;
+    @include mobile {
+      border-left: 10px solid transparentize($blue, 0.6);
+      border-bottom: 15px solid transparentize($blue, 0.6);
+      padding-bottom: 70px;
+    }
+
+    .l-fourth_bg_1 {
+      position: absolute;
+      z-index: 1;
+      max-width: 600px;
+      width: 100%;
+      @include desktop {
+        left: -300px;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  .l-fourth_title {
+    color: $blue;
+    text-transform: capitalize;
+    @include ff("primary", "bold");
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    line-height: 1em;
+    @include mobile {
+      text-align: center;
+    }
+  }
+
+  .l-fourth_desc {
+    font-size: 0.9em;
+  }
+
+  .l-fourth_cta {
+    margin-top: 20px;
+    @include desktop {
+      margin-top: 50px;
+      .m-cta {
+        text-align: left;
+        .m-cta_subtitle {
+          padding-left: 25px;
+        }
+      }
+    }
+  }
+} //end of l-fourth
+
+.l-fifth {
+  .l-fifth_left {
+    order: 1;
+    background: url("../images/fifth_bg.svg") no-repeat left center;
+    background-size: cover;
+    background-color: #edebee;
+    padding-top: 30px;
+    @include desktop {
+      padding-top: 100px;
+      padding-left: 50px;
+    }
+  }
+  .l-fifth_right {
+    order: 2;
+    @include mobile {
+      order: 0;
+    }
+  }
+
+  .l-fifth_title {
+    color: $blue;
+    @include ff("primary", "bold");
+    font-size: 2.5em;
+    max-width: 450px;
+    line-height: 1.2em;
+    text-transform: capitalize;
+
+    @include mobile {
+      font-size: 2em;
+    }
+  }
+
+  .l-fifth_subtitle {
+    max-width: 600px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    font-size: 1.5em;
+    text-transform: capitalize;
+    color: $lightgrey;
+  }
+
+  .l-fifth_cta {
+    margin-top: 50px;
+    margin-bottom: 40px;
+    @include desktop {
+      .m-cta {
+        text-align: left;
+      }
+      .m-cta_subtitle {
+        padding-left: 20px;
+      }
+    }
+  }
+} //end of l-fifth
+
+.l-sixth {
+  .l-sixth_right {
+    padding-top: 30px;
+  }
+
+  .l-sixth_benefits {
+    margin: 40px 0;
+  }
+
+  .l-sixth_cta {
+    margin-bottom: 30px;
+  }
+  .l-sixth_desc {
+    span {
+      color: $blue;
+      @include ff("primary", "bold");
+    }
+  }
+} //end of l-sixth
 
 .l-footer {
   background: $blue;
   color: $white;
   text-align: center;
   padding: 20px 0;
-  font-size: 1.5em;
+  font-size: 0.8em;
 } // end of l-footer
+
+.l-singup {
+  .l-singup_left {
+    padding: 20px;
+    @include desktop {
+      padding: 40px;
+    }
+  }
+
+  .l-singup_right {
+    background: #92e7ec url("../images/dilvery_box.jpg") no-repeat center;
+    background-size: cover;
+  }
+
+  .l-singupForm_Title {
+    color: $lightgrey;
+    text-align: center;
+    font-size: 1.2em;
+    @include desktop {
+      font-size: 1.7em;
+    }
+    margin-bottom: 20px;
+    @include desktop {
+      margin-bottom: 40px;
+    }
+  }
+
+  .l-singupForm_steps {
+    @include desktop {
+      margin-bottom: 30px;
+    }
+  }
+
+  .l-singupForm_form {
+    .row {
+      margin-bottom: 22px;
+    }
+
+    .l-singupForm_form_bottom {
+      margin-top: 50px;
+      text-align: center;
+    }
+
+    .l-singupForm_bottomNoCrd {
+      font-size: 0.9em;
+      padding-top: 20px;
+      color: $lightgrey;
+    }
+
+    @include mobile {
+      &.l-singupForm_setp1 {
+        label {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+.l-thankyou {
+  background: $lightwhiteGrey;
+  position: relative;
+  overflow: hidden;
+  padding: 20px;
+  @include desktop {
+    padding: 50px;
+  }
+
+  .l-thankyou_bg1 {
+    position: absolute;
+    width: 500px;
+    top: -250px;
+    left: -250px;
+  }
+
+  .l-thankyou_bg2 {
+    position: absolute;
+    z-index: 1;
+    height: 80%;
+    @include mobile {
+      height: 60%;
+    }
+    top: 0px;
+    left: 0px;
+  }
+  .l-thankyou_left {
+    background: transparentize($blue, 0.65) url("../images/thankyou_bg.svg")
+      no-repeat -60% 0px;
+    background-size: cover;
+    text-align: center;
+    padding: 20px;
+    padding-top: 50px;
+    @include desktop {
+      padding-top: 100px;
+    }
+  }
+
+  .l-thankyou_title {
+    font-size: 2em;
+    @include desktop {
+      font-size: 3em;
+    }
+    @include ff("primary", "bold");
+    color: $white;
+    line-height: 1.5em;
+  }
+  .l-thankyou_subtitle {
+    font-size: 1.5em;
+    @include desktop {
+      font-size: 2.5em;
+    }
+    @include ff("primary", "bold");
+    color: transparentize($grey, 0.25);
+    margin-bottom: 30px;
+  }
+  .l-thankyou_desc {
+    color: transparentize($grey, 0.25);
+    max-width: 510px;
+    display: inline-block;
+    line-height: 1.2em;
+  }
+
+  .l-thanyou_share {
+    margin-top: 20px;
+    @include mobile {
+      margin-bottom: 20px;
+    }
+
+    .l-thankyou_share_title {
+      @extend .l-thankyou_subtitle;
+      font-size: 1.5em;
+      @include mobile {
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
