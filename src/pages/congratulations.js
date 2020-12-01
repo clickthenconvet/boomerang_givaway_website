@@ -10,7 +10,8 @@ export default () => {
                 childContentYaml {
                     title,
                     subtitle,
-                    desc
+                    desc,
+                    business_desc
                 }
             }
         }

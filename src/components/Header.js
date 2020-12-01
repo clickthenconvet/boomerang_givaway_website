@@ -1,32 +1,24 @@
-import React from "react";
+import React,{useContext} from "react";
 import { useStaticQuery,graphql,Link } from 'gatsby';
 import Image from "../components/Image";
+
+import {globalCTX} from '../context/globalCTX';
+
 export default () => {
 
-  const data = useStaticQuery(graphql`{
-    site {
-      siteMetadata {
-        title
-      }
-    }
+  const {pagetype$} = useContext(globalCTX);
+  const URL = (pagetype$ === 'b2b') ? '/business' : '/';
 
-    logo: file(relativePath: {eq: "logo_white.png"}) {
-      childImageSharp {
-        fluid {
-          ...GatsbyImageSharpFluid
-        }
-      }
-    }
-  }`);
+
 
   return(
     <header className="l-header">
 
-      <Link to="/">
+      <Link to={URL}>
         <Image 
           src="logo_white.png" 
           className="l-header_logo"
-          alt={data.site.siteMetadata.title}
+          alt=""
         />
       </Link>
         

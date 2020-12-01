@@ -1,10 +1,10 @@
 cta:
-  title: Get Your Free 4 Pack Now
+  title: Get Your FREE 4 Pack Now
   subtitle: No credit card information is required.
 
 hero_section:
   title: Quench your thirst. Boost your immunity. Be a planet saver.
-  subtitle: Claim your Free 4 pack of Ultra-Pure water delivered right to your doorstep.
+  subtitle: Claim your FREE 4 pack of Ultra-Pure water delivered right to your doorstep.
   alert: Hurry, our 2,000 Bottle Giveaway Ends Soon
   bg_text:
     - healthier
@@ -15,10 +15,10 @@ second_section:
   title: it couldn't be easier
   features:
     - img: icon_bottle_pack.png
-      title: sign up now to get your free gift
+      title: sign up now to get your FREE gift
       desc: Join our fight against plastic with no obligation. No credit card required to sign up! Reduce your footprint on the environment with 4 awesome eco-friendly bottles delivered straight to your door.
     - img: icon_bottles.png
-      title: it’s super easy and hassle free
+      title: it’s super easy and hassle FREE
       desc: Get your 4 pack of Ultra-Purified water delivered directly to your door. Simply tell us where and when you want it delivered.
     - img: icon_bottle.png
       title: but hurry
@@ -27,7 +27,7 @@ second_section:
 third_section:
   title: Get a healthy boost while saving the planet!
   vertical_title: signing up
-  bottom_subtitle: Sign up now to get your hands on a free case before they're all gone!
+  bottom_subtitle: Sign up now to get your hands on a FREE case before they're all gone!
   features:
     - title: Boost Your Immunity
       desc: Ultra-Pure water is a powerful natural immunity booster that powers up your body, removes toxins, aids with digestion, and even improves the performance of your circulatory system.
@@ -48,13 +48,13 @@ fifth_section:
   title_left: Be a planet saver
   subtitle: Every year, Americans consume nearly 50 Billion single-serve plastic bottles.
   bullet_points:
-    - sine: ">"
+    - sine: "<"
       value: 15
       title: Are Recycled
     - sine:
       value: 20
       title: End up in the Ocean
-    - sine: "<"
+    - sine: ">"
       value: 60
       title: End up in Landfills
 
@@ -64,8 +64,9 @@ sixth_section:
   bullet_points:
     - Our ultra-pure water is cleaner and healthier than other bottled water.
     - Our bottles don't leach chemicals into the water like other bottles.
-    - It’s Free! Take advantage of our giveaway and get your Free 4 pack today.
+    - It’s FREE! Take advantage of our giveaway and get your FREE 4 pack today.
 
 exit_popup:
-  title: Are you sure you don't want your free 4 pack?
+  img: pack.png
+  title: Are you sure you don't want your FREE 4 pack?
   desc: It only takes one minute to be a planet saver! Get delicious ultra-pure water delivered straight to your door.

@@ -1,20 +1,35 @@
-import React from 'react';
+import React,{useContext,useEffect} from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import SEO from "../components/Seo";
 import Frontpage from '../template/Frontpage';
+import {globalCTX} from '../context/globalCTX';
+
 
 export default () => {
+
+
+    const {setPageType$} = useContext(globalCTX);
     const images = {
-        hero_feature: "business_pack.png",
-        second_section_feature:"second_feature.jpg",
-        third_section_feature:"third_feature.jpg",
+        hero_feature: "businesshero_feature.png",
+        second_section_feature:"business_second_feature.jpg",
+        third_section_feature:"business_thrid_feature.jpg",
         fourth_section_feature:"fourth_feature.jpg",
-        fifth_section_feature:"planet_saver.jpg",
-        six_section_feature:"sixth_feature.jpg",
+        fifth_section_feature:"business_fifth_feature.jpg",
+        six_section_feature:"business_six_feature.jpg",
     }
 
     const query = useStaticQuery(graphql`{
+        site {
+            siteMetadata {
+                business{
+                    title
+                    description
+                    url,
+                    og_image
+                }
+            }
+        }
         content:allFile(filter: {relativePath: {eq: "business.yaml"}}) {
             nodes {
                 childContentYaml {
@@ -65,14 +80,30 @@ export default () => {
                         title,
                         desc,
                         bullet_points
+                    },
+                    exit_popup{
+                        img
+                        title,
+                        desc
                     }
                 }
             }
         }
     }`);
+
+    useEffect(()=>{
+        
+        setPageType$('b2b')
+
+    },[]);
     return (
         <>
-            <SEO title={query.content.nodes[0].childContentYaml.cta.title} />
+            <SEO 
+                title={query.site.siteMetadata.business.title} 
+                desc={query.site.siteMetadata.business.description}
+                url={query.site.siteMetadata.business.url}
+                ogImage={query.site.siteMetadata.business.og_image}
+            />
             <Frontpage content={query.content.nodes[0].childContentYaml} images={images}/>
         </>
     );

@@ -196,6 +196,9 @@
 
   .l-fourth_right {
     position: relative;
+    @include desktop {
+      padding-bottom: 80px;
+    }
     @include mobile {
       border-left: 10px solid transparentize($blue, 0.6);
       border-bottom: 15px solid transparentize($blue, 0.6);
@@ -340,6 +343,10 @@
   .l-singup_right {
     background: #92e7ec url("../images/dilvery_box.jpg") no-repeat center;
     background-size: cover;
+
+    &.b2b {
+      background-image: url("../images/business_signup.jpg");
+    }
   }
 
   .l-singupForm_Title {

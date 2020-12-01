@@ -1,7 +1,9 @@
-import React from 'react';
+import React,{ useEffect } from 'react';
 import Image from '../components/Image';
 
 export default ({imgSrc,title,desc}) => {
+
+
     return (
         <>
             <div className="m-signupFeature">

@@ -1,5 +1,6 @@
 { 
-    "google_sheet_url": "https://script.google.com/macros/s/AKfycbw4lUMAutYylmINelxVWI0JUukQ7dWrJSrAd6E1ZcCFVos9BFU/exec",
+    "google_sheet_url_b2c": "https://script.google.com/macros/s/AKfycbyQGrw4CELXbbJQ9xJBeY-oMf_y4fb2kAW8AWY_OhKcZgqEH60/exec",
+    "google_sheet_url_b2b": "https://script.google.com/macros/s/AKfycbycqLpMq2DiG1Q2v6yYf8eZFbA3x2fOlEySeBsJlYCkO6Ive2Y/exec",
     "serviceable_zips":[
       28035,
       28036,

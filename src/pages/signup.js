@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useContext} from 'react';
 import { useForm } from "react-hook-form";
 import SEO from "../components/Seo";
 import Layout from "../components/Layout";
@@ -9,35 +9,45 @@ import config from "../config.json";
 
 import Loading from "../images/loading.svg"
 
+import {globalCTX} from '../context/globalCTX';
+
 var formdata = {};
 
-export default () => {
+export default (props) => {
 
-    
+    const {pagetype$} = useContext(globalCTX);
+
     const {register, handleSubmit, errors } = useForm();
     const [stepCount,setStepCount] = useState(0);
     const [formSending,setformSending] = useState(false);
     const [submitError,setsubmitError] = useState(false);
 
 
+    const getPageVariable = ()=>{
+        return {
+            google_sheet_url:((pagetype$==='b2c') ? config.google_sheet_url_b2c : config.google_sheet_url_b2b),
+            title_fragment: ((pagetype$==='b2c') ? '4 Pack of Boomerang Water!' : 'case of 16 eco-friendly water bottles')
+        }
+    }
+
+
     
 
     const _submitStep1 = data => {
 
-        setformSending(true);
-
-        formdata = {
-            ...data,
-            size:'4 Pack',
-            campaign_type:'Regular free 4 Pack',
-            in_zip_range:'No'
-        };
         
         // check for zip code
         if(config.serviceable_zips.indexOf(parseInt(data.zip))!==-1){
             
             setStepCount(1);
         }else{
+
+            setformSending(true);
+
+                formdata = {
+                    ...data,
+                    in_zip_range:'No'
+                };
 
             const HTMLFormData = new FormData();
 
@@ -46,15 +56,15 @@ export default () => {
             }
 
             //send data to google sheet
-            fetch(config.google_sheet_url, {
+            fetch(getPageVariable().google_sheet_url, {
                 method: 'POST',
                 body: HTMLFormData
             })
             .then(res=>{
-                navigate('/thankyou');
+                navigate(getPageVariable().thankyou_page_url);
             })
             .catch(err=> {
-                navigate('/thankyou');
+                navigate(getPageVariable().thankyou_page_url);
             });
             
         } 
@@ -69,8 +79,6 @@ export default () => {
         formdata = {
             ...formdata,
             ...data,
-            size:'4 Pack',
-            campaign_type:'Regular free 4 Pack',
             in_zip_range:'Yes'
         };
 
@@ -81,12 +89,14 @@ export default () => {
         }
 
         //send data to google sheet
-        fetch(config.google_sheet_url, {
+
+        
+        fetch(getPageVariable().google_sheet_url, {
             method: 'POST',
             body: HTMLFormData
         })
         .then(res=>{
-             navigate('/congratulations');
+             navigate(getPageVariable().congratulations_page_url);
         })
         .catch(err=> {
             setformSending(false);
@@ -95,6 +105,10 @@ export default () => {
         });
 
     }
+
+
+ 
+
     return (
         <>
             <Layout>
@@ -104,7 +118,7 @@ export default () => {
                         <div className="row">
                         <div className="col-lg-6 l-singup_left">
                             <div className="l-singupForm">
-                                <div className="l-singupForm_Title">You're {2-stepCount} steps away from getting your free 4 Pack of Boomerang Water!</div>
+                                <div className="l-singupForm_Title">You're {2-stepCount} steps away from getting your FREE {getPageVariable().title_fragment} !</div>
                                 <div className="l-singupForm_steps">
                                     <StepNavigation 
                                         labels={['Sign Up','Choose best time to Deliver']} 
@@ -126,6 +140,30 @@ export default () => {
 
                                                 </div>
                                             </div>
+
+
+                                            <ToggleView show={pagetype$==='b2b'}>
+                                                <div className="row">
+                                                    <div className="col-12">
+                                                        <label htmlFor="business_name">Business Name *</label>
+                                                        <input id="business_name" name="business_name" type="text" ref={register({required: true, minLength:3})} placeholder="Business Name"/>
+                                                        {errors.business_name && <span className="g-input_error">⚠ Enter your business name</span>}
+
+                                                    </div>
+                                                </div>
+
+                                                <div className="row">
+                                                    <div className="col-12">
+                                                        <label htmlFor="name">Website</label>
+                                                        <input id="website" name="website" type="url" ref={register} placeholder="Website"/>
+
+                                                    </div>
+                                                </div>
+                                            </ToggleView>
+
+                                            
+
+                                            
 
                                             <div className="row">
                                                 <div className="col-12">
@@ -262,8 +300,7 @@ export default () => {
 
 
                         </div>
-                        <div className="col-lg-6 g-flash-padding-both l-singup_right">
-                        </div>
+                        <div className={'col-lg-6 g-flash-padding-both l-singup_right ' + ((pagetype$==='b2b') ? 'b2b' : 'b2c')}></div>
                         </div>
                     </div>
                 </div>

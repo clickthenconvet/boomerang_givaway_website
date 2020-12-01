@@ -11,11 +11,14 @@ export default () => {
                 childContentYaml {
                     title,
                     subtitle,
-                    desc
+                    desc,
+                    business_desc
                 }
             }
         }
     }`);
+
+    console.log(query.content.nodes[0].childContentYaml);
     return (
         <>
             <Thankyou content={query.content.nodes[0].childContentYaml} bg_img={img_Thankyou}/>
