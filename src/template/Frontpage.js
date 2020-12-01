@@ -17,30 +17,65 @@ export default ({content,images,location}) => {
   useEffect(()=>{
 
     var eventTrigerd = false;
+
+    const openExitPopUp = ()=>{
+      eventTrigerd = true;
+      document.querySelector('.m-exitPopup') && (document.querySelector('.m-exitPopup').style.display = 'block');
+    }
     
     const closeExitPopUp = ()=>{
       document.querySelector('.m-exitPopup').style.display = 'none';
+    
     }
     
-    function openpopListner(event){
+    function mouseOutListner(event){
       if (!event.toElement && !event.relatedTarget) {
         setTimeout(() => {
           
           if(!eventTrigerd){
-            eventTrigerd = true;
-             document.querySelector('.m-exitPopup') && (document.querySelector('.m-exitPopup').style.display = 'block');
+            
+            openExitPopUp()
           }
         }, 1000)
       }
     }
-
+    
+    function scrollListner(){
+      let scrollPercentage = Math.round((window.scrollY / (document.body.offsetHeight-window.innerHeight)*100));
+      
+      
+      if(scrollPercentage === 95){
+        setTimeout(()=>{
+          !eventTrigerd && openExitPopUp();
+        },4000)
+      }
+      
+    }
+    
     //exit popup open event
-    document.addEventListener("mouseout",openpopListner );
+    setTimeout(()=>{
+      document.addEventListener("mouseout",mouseOutListner);
+    },3000);
+    
+    window.addEventListener('scroll',scrollListner);
+    
+    
+    const timeoutEvent = setTimeout(()=>{
+      
+      !eventTrigerd && openExitPopUp();
+    },20000)
+    
+
+
+    
+    
     //exit popup close event
     document.querySelector('.m-exitPopup_close').addEventListener('click',()=>closeExitPopUp());
-  
+    
     return ()=>{
-      document.removeEventListener('mouseout',openpopListner);
+      document.removeEventListener('mouseout',mouseOutListner);
+      window.removeEventListener('scroll',scrollListner);
+      clearTimeout(timeoutEvent);
     }
 
   },[]);

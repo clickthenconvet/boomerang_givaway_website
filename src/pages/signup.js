@@ -13,7 +13,7 @@ import {globalCTX} from '../context/globalCTX';
 
 var formdata = {};
 
-export default (props) => {
+export default () => {
 
     const {pagetype$} = useContext(globalCTX);
 
@@ -25,9 +25,9 @@ export default (props) => {
 
     const getPageVariable = ()=>{
         return {
-            google_sheet_url:((pagetype$==='b2c') ? config.google_sheet_url_b2c : config.google_sheet_url_b2b),
-            title_fragment: ((pagetype$==='b2c') ? '4 Pack of Boomerang Water!' : 'case of 16 eco-friendly water bottles')
-        }
+            google_sheet_url:((pagetype$==='b2b') ?  config.google_sheet_url_b2b : config.google_sheet_url_b2c),
+            title_fragment: ((pagetype$==='b2b') ?  'case of 16 eco-friendly water bottles' : '4 Pack of Boomerang Water!')
+        }   
     }
 
 
@@ -38,16 +38,16 @@ export default (props) => {
         
         // check for zip code
         if(config.serviceable_zips.indexOf(parseInt(data.zip))!==-1){
-            
+            formdata = data;
             setStepCount(1);
         }else{
 
             setformSending(true);
 
-                formdata = {
-                    ...data,
-                    in_zip_range:'No'
-                };
+            formdata = {
+                ...data,
+                in_zip_range:'No'
+            };
 
             const HTMLFormData = new FormData();
 
@@ -61,10 +61,10 @@ export default (props) => {
                 body: HTMLFormData
             })
             .then(res=>{
-                navigate(getPageVariable().thankyou_page_url);
+                navigate('/thankyou');
             })
             .catch(err=> {
-                navigate(getPageVariable().thankyou_page_url);
+                navigate('/thankyou');
             });
             
         } 
@@ -82,6 +82,7 @@ export default (props) => {
             in_zip_range:'Yes'
         };
 
+
         const HTMLFormData = new FormData();
 
         for( var key in formdata ) {
@@ -89,20 +90,20 @@ export default (props) => {
         }
 
         //send data to google sheet
-
         
         fetch(getPageVariable().google_sheet_url, {
             method: 'POST',
             body: HTMLFormData
         })
         .then(res=>{
-             navigate(getPageVariable().congratulations_page_url);
+             navigate('/congratulations');
         })
         .catch(err=> {
             setformSending(false);
             console.log(err)
             setsubmitError(err);
         });
+        
 
     }
 
@@ -248,7 +249,7 @@ export default (props) => {
                                         <div className="row">
                                             <div className="col-12">
                                                 <label htmlFor="timetocall">Best Time to Call</label>
-                                                <select name="timetocall" id="timetocall" ref={register}>
+                                                <select name="time_to_call" id="timetocall" ref={register}>
                                                     <option value="Morning">Morning</option>
                                                     <option value="Afternoon">Afternoon</option>
                                                     <option value="Evening">Evening</option>
@@ -260,7 +261,7 @@ export default (props) => {
                                         <div className="row">
                                             <div className="col-12">
                                             <label htmlFor="timetodeliver">Best Time to Deliver</label>
-                                               <select name="timetodeliver" id="timetodeliver" ref={register}>
+                                               <select name="time_to_deliver" id="timetodeliver" ref={register}>
                                                     <option value="Morning">Morning</option>
                                                     <option value="Afternoon">Afternoon</option>
                                                     <option value="Evening">Evening</option>

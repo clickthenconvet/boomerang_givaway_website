@@ -7,7 +7,6 @@ export const wrapRootElement = ({ element }) => {
 
     return (
         <>
-
             <GlobalCTXProvider>{element}</GlobalCTXProvider>
         </>
     )
