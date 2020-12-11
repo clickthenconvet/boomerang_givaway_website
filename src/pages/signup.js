@@ -316,7 +316,7 @@ export default () => {
 
                       <div className="row">
                         <div className="col-12">
-                          <label htmlFor="address">{(pagetype$=='b2b') && 'Business'}Address * </label>
+                          <label htmlFor="address">{(pagetype$=='b2b') && 'Business'} Address * </label>
                           <input
                             placeholder="Address"
                             id="address"
