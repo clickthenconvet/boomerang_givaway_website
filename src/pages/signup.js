@@ -6,6 +6,7 @@ import StepNavigation from "../components/StepNavigation";
 import ToggleView from "../components/ToggleView";
 import { navigate } from "gatsby";
 import config from "../config.json";
+import useFbq from '../hooks/useFbq';
 
 import Loading from "../images/loading.svg";
 
@@ -13,10 +14,47 @@ import { globalCTX } from "../context/globalCTX";
 
 var formdata = {};
 
-export default () => {
-  const { pagetype$,setPageType$ } = useContext(globalCTX);
+function genACData(data, pagetype$) {
+  const splitName = data['name'].split(" ");
+  const AC_Form_DATA = new FormData();
 
-  const { register, handleSubmit, errors } = useForm();
+  AC_Form_DATA.append('email', data['email']);
+  AC_Form_DATA.append('phone', data['phone']);
+  AC_Form_DATA.append('first_name', splitName[0]);
+  AC_Form_DATA.append('last_name', (splitName[1] || ''));
+  AC_Form_DATA.append('status[1]', 1);
+
+
+  AC_Form_DATA.append('p[1]', 1); //master list
+  if (pagetype$ === 'b2c') {
+    AC_Form_DATA.append('p[3]', 3);//b2c list 
+    AC_Form_DATA.append('tags', '[source_promo_landing_page],[type_b2c]');
+  } else {
+    AC_Form_DATA.append('p[4]', 4);//b2b list
+    AC_Form_DATA.append('tags', '[source_promo_landing_page],[type_b2b]');
+  }
+
+  AC_Form_DATA.append('field[1,0]	', data['address']); //address
+  AC_Form_DATA.append('field[2,0]	', data['city']); //city
+  AC_Form_DATA.append('field[3,0]	', data['state']); //state
+  AC_Form_DATA.append('field[4,0]	', data['zip']); //zip
+  AC_Form_DATA.append('field[5,0]	', data['apartment']); //apt
+  AC_Form_DATA.append('field[6,0]	', data['time_to_call']); //time to call
+  AC_Form_DATA.append('field[7,0]	', data['time_to_deliver']); //time to delivery
+  AC_Form_DATA.append('field[8,0]	', data['business_name']); //business name
+  AC_Form_DATA.append('field[9,0]	', data['website']); //website
+
+  return AC_Form_DATA;
+
+}
+
+export default () => {
+
+  const fbq = useFbq();
+  const activecamp_url = 'https://boomerangwater.api-us1.com/admin/api.php?api_action=contact_add&api_key=f9eb248884a2b0c5350420145bdc36431b6349e1a77f0d03f084ce0417b88e74807eecf9';
+  const { pagetype$ } = useContext(globalCTX);
+
+  const {register, handleSubmit, errors} = useForm();
   const [stepCount, setStepCount] = useState(0);
   const [formSending, setformSending] = useState(false);
   const [submitError, setsubmitError] = useState(false);
@@ -35,16 +73,32 @@ export default () => {
   };
 
   const _submitStep1 = (data) => {
+
+    fbq("CompleteFirstStepOfSingup", {
+      type: pagetype$,
+
+    });
+
+
     // check for zip code
     if (config.serviceable_zips.indexOf(parseInt(data.zip)) !== -1) {
       formdata = data;
       setStepCount(1);
     } else {
+      // Out Of Service Area
+
+      fbq("OutOfServiceArea", {
+        type: pagetype$,
+        zip: parseInt(data.zip)
+
+      });
+
       setformSending(true);
 
       formdata = {
         ...data,
         in_zip_range: "No",
+        type: pagetype$
       };
 
       const HTMLFormData = new FormData();
@@ -52,6 +106,14 @@ export default () => {
       for (var key in formdata) {
         HTMLFormData.append(key, formdata[key]);
       }
+
+   
+      //send leads to AC
+      fetch(activecamp_url, {
+        method: "POST",
+        body: genACData(data, pagetype$),
+      })
+      
 
       //send data to google sheet
       fetch(getPageVariable().google_sheet_url, {
@@ -68,13 +130,21 @@ export default () => {
   };
 
   const _submitStep2 = (data) => {
+
+    fbq("SignUp", {
+      type: pagetype$
+
+    });
     setformSending(true);
 
     formdata = {
       ...formdata,
       ...data,
       in_zip_range: "Yes",
+      type: pagetype$,
     };
+
+    
 
     const HTMLFormData = new FormData();
 
@@ -82,8 +152,16 @@ export default () => {
       HTMLFormData.append(key, formdata[key]);
     }
 
-    //send data to google sheet
+    //send leads to AC
+    console.log(formdata);
+    fetch(activecamp_url, {
+      method: "POST",
+      body: genACData(formdata, pagetype$),
+    })
 
+    
+    
+    //send data to google sheet
     fetch(getPageVariable().google_sheet_url, {
       method: "POST",
       body: HTMLFormData,
@@ -93,13 +171,25 @@ export default () => {
       })
       .catch((err) => {
         setformSending(false);
-        console.log(err);
         setsubmitError(err);
       });
   };
 
   useEffect(()=>{
-    setPageType$(localStorage.getItem('pagetype') || 'b2c');
+    
+    //send pixel event
+    /* if (typeof fbq !== undefined){
+      fbq(
+        'track',
+        'InitiateCheckout',
+        {
+          content_name: pagetype$,
+          currency: 'USD',
+        },
+
+      );
+    } */
+      
   },[])
 
   
@@ -226,38 +316,54 @@ export default () => {
 
                       <div className="row">
                         <div className="col-12">
-                          <label htmlFor="address">Address</label>
+                          <label htmlFor="address">{(pagetype$=='b2b') && 'Business'}Address * </label>
                           <input
                             placeholder="Address"
                             id="address"
                             name="address"
                             type="text"
-                            ref={register}
+                            ref={register({ required: true})}
                           />
+                          {errors.address && (
+                            <span className="g-input_error">
+                              ⚠ Please enter your address
+                            </span>
+                          )}
                         </div>
                       </div>
 
                       <div className="row">
                         <div className="col-6">
-                          <label htmlFor="city">City</label>
+                          <label htmlFor="city">City *</label>
                           <input
                             placeholder="City"
                             id="city"
                             name="city"
                             type="text"
-                            ref={register}
+                            ref={register({ required: true })}
+                            
                           />
+                          {errors.city && (
+                            <span className="g-input_error">
+                              ⚠ Please enter your city
+                            </span>
+                          )}
                         </div>
 
                         <div className="col-6">
-                          <label htmlFor="state">State</label>
+                          <label htmlFor="state">State *</label>
                           <input
                             placeholder="State"
                             id="state"
                             name="state"
                             type="text"
-                            ref={register}
+                            ref={register({ required: true })}
                           />
+                          {errors.state && (
+                            <span className="g-input_error">
+                              ⚠ Please enter your State
+                            </span>
+                          )}
                         </div>
                       </div>
 
@@ -294,7 +400,7 @@ export default () => {
                       </div>
 
 
-                      <h1>{pagetype$}</h1>
+                     
 
                       <div className="l-singupForm_form_bottom">
                         <ToggleView show={formSending}>

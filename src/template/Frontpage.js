@@ -47,7 +47,7 @@ export default ({content,images,location}) => {
       if(scrollPercentage === 95){
         setTimeout(()=>{
           !eventTrigerd && openExitPopUp();
-        },4000)
+        },15000)
       }
       
     }
@@ -55,7 +55,7 @@ export default ({content,images,location}) => {
     //exit popup open event
     setTimeout(()=>{
       document.addEventListener("mouseout",mouseOutListner);
-    },3000);
+    },25000);
     
     window.addEventListener('scroll',scrollListner);
     
